@@ -6,7 +6,7 @@
 /*   By: luiribei <luiribei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:29:21 by luiribei          #+#    #+#             */
-/*   Updated: 2024/11/12 17:05:35 by luiribei         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:11:33 by luiribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char *argv[])
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = sig_handler;
 	if (pid < 0 || kill(pid, 0) == -1)
-		return (ft_printf("check your pid \n"), 0);
+		return (ft_printf("check your pid \n"));
 	if (sigaction(SIGUSR1, &sa, NULL) == -1 \
 		|| sigaction(SIGUSR2, &sa, NULL) == -1)
 		return (ft_putstr_fd("Error sigaction\n", 1), 1);
