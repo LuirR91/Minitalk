@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luiribei <luiribei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:50:03 by luiribei          #+#    #+#             */
-/*   Updated: 2024/11/14 12:09:20 by luiribei         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:33:57 by luiribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "../inc/minitalk_bonus.h"
 
 void	ft_bin_to_char(int signal, char *c)
 {
@@ -63,3 +63,26 @@ int	main(void)
 		pause();
 	return (0);
 }
+
+/* 
+
+Encryption
+
+Server Side:
+
+Each signal updates c:
+
+Start with c = 00000000
+
+•	After Bit 7 (0): c = 00000000
+•	After Bit 6 (1): c = 00000001
+•	After Bit 5 (0): c = 00000010
+•	After Bit 4 (0): c = 00000100
+•	After Bit 3 (0): c = 00001000
+•	After Bit 2 (0): c = 00010000
+•	After Bit 1 (0): c = 00100000
+•	After Bit 1 (0): c = 01000001
+
+	After all 8 bits, c = 01000001, which is ASCII 65 or 'A'
+
+*/

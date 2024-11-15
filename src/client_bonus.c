@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luiribei <luiribei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:29:21 by luiribei          #+#    #+#             */
-/*   Updated: 2024/11/14 12:25:56 by luiribei         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:34:03 by luiribei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "../inc/minitalk_bonus.h"
 
 static int	g_sign_sent;
 
@@ -83,3 +83,24 @@ int	main(int argc, char *argv[])
 	ft_char_to_bin('\0', pid);
 	return (0);
 }
+
+/*
+
+Encryption
+
+Client Side:
+
+'A' in ASCII: 65
+Binary: 01000001
+
+Send each bit:
+•         Bit 7: 0 -> SIGUSR2
+•         Bit 6: 1 -> SIGUSR1
+•         Bit 5: 0 -> SIGUSR2
+•         Bit 4: 0 -> SIGUSR2
+•         Bit 3: 0 -> SIGUSR2
+•         Bit 2: 0 -> SIGUSR2
+•         Bit 1: 0 -> SIGUSR2
+•         Bit 0: 1 -> SIGUSR1
+
+*/
